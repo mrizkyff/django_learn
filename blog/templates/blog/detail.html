@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block Title %}
+    {{Judul}}
+{% endblock Title %}
+
+{% block pageTitle %}
+    {{Judul}}
+{% endblock pageTitle %}
+
+{% block contents %}
+    {{Content}}
+
+    <h1>{{DetailPost.judul}}</h1>
+    <p>{{DetailPost.publish_time}}</p>
+    <p>{{DetailPost.body}}</p>
+    
+
+{% endblock contents %}

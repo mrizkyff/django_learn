@@ -18,10 +18,14 @@
         {% endfor %}
             <a href="/blog" role="button">All Post</a>
 
+
     {% for post in Posts %}
         <a href="/blog/post/{{post.slug}}">
         <h1>{{post.judul}}</h1>
         </a>
         <p>{{post.publish_time}}</p>
+        <p>{{post.body|truncatechars:200}}</p>
     {% endfor %}
+    
+
 {% endblock contents %}
