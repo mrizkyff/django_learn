@@ -14,12 +14,12 @@
     <br>
 
         {% for category in Categories %}
-            <a href="/blog/category/{{category.category}}" role="button">{{category.category}}</a>
+            <a href="{% url "blog:category" categoryInput=category.category %}" role="button">{{category.category}}</a>
         {% endfor %}
             <a href="/blog" role="button">All Post</a>
 
     {% for post in Posts %}
-        <a href="/blog/post/{{post.slug}}">
+        <a href="{% url "blog:detail" slugInput=post.slug %}">
         <h1>{{post.judul}}</h1>
         </a>
         <p>{{post.publish_time}}</p>
