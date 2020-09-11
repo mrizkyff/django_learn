@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 from .models import Post
 
+from .forms import ContactForm
+
 def index(request):
     posts = Post.objects.all()
     categories = Post.objects.values('category').distinct()
@@ -39,3 +41,15 @@ def categoryPost(request, categoryInput):
     }
 
     return render(request, 'blog/category.html', context)
+
+def kontak(request):
+    contact_form = ContactForm()
+    context = {
+        'Judul':'Kontak',
+        'Content':'Kontak Saya',
+        'data_form':contact_form,
+    }
+
+    print(request.POST)
+
+    return render(request, 'blog/contact.html', context)
